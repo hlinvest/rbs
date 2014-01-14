@@ -1,0 +1,27 @@
+<p>Notes to the programmer:
+<ul>
+<li>The user selects the hour for which he would like to reserve a table.
+</ul>
+
+<p>User interface:
+
+<p><a href='/'>Home</a>
+
+<h1>Restaurant Table Reservation System</h1>
+
+<h2>{{ month_str }} {{ day }}, {{ year }}</h2>
+
+{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
+
+<form action="/reservation_hour_result/" method="post">
+
+	<table border='1'>
+	{% for hour in hours %}
+		<tr>
+			<td><button name='slot' value='{{ year }} {{ month }} {{ day }} {{ hour.hour }}' >{{ hour.hour_str }}</button>
+		</tr>
+	{% endfor %}
+	</table>
+
+</form>
+

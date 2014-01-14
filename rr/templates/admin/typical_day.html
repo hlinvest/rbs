@@ -1,0 +1,50 @@
+<p>Notes to the programmer:
+<ul>
+<li>The 'Opens' select element has 48 entries, one for each half-hour of the day.
+<li>The 'Closes' select element has the same.
+<li>The restaurant owner modifies these to reflect his typical (Monday through Friday) opening and closing times.
+<li>These values will be used to pre-populate a typical week.
+</ul>
+
+<p>User interface:
+
+<p><a href='/'>Home</a>
+
+<h1>Restaurant Table Reservation System</h1>
+
+{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
+
+<form action="/admin/typical_day_result/" method="post">
+
+	<table border='1'>
+
+		<tr>
+			<th>Opens
+			<th>Closes
+		</tr>
+		<tr>
+			<td><select name='opens'>
+				{% for entry in opens %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+			<td><select name='closes'>
+				{% for entry in closes %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+		</tr>
+
+	</table>
+
+<p><input type="submit" value="Submit">
+</form>
+

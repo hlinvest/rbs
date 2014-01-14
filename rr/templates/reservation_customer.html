@@ -1,0 +1,38 @@
+<a href='/'>Home</a>
+
+<h1>Restaurant Table Reservation System</h1>
+
+{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
+
+<form action="/reservation_customer_result/" method="post">
+
+	<input type='hidden' name='reservations' value='{{ reservations }}'></input>
+
+	<table border='1'>
+
+		<tr>
+			<td>Last name:
+			<td><input type='textarea' name='last'></input>
+			<td>(optional)
+		</tr>
+		<tr>
+			<td>First name:
+			<td><input type='textarea' name='first'></input>
+			<td>(optional)
+		</tr>
+		<tr>
+			<td>Email address:
+			<td><input type='textarea' name='email'></input>
+			<td>(optional)
+		</tr>
+		<tr>
+			<td>Phone number:
+			<td><input type='textarea' name='phone' value='123-456-7890'></input>
+			<td>(required)
+		</tr>
+
+	</table>
+
+<p><input type="submit" value="Submit" />
+</form>
+

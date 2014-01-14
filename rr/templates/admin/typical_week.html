@@ -1,0 +1,176 @@
+<p>Notes to the programmer:
+<ul>
+<li>The select elements on this page are pre-populated with values from the typical_day screen.
+<li>The restaurant owner modifies those that differ (weekends most likely).
+</ul>
+
+<p>User interface:
+
+<p><a href='/'>Home</a>
+
+<h1>Restaurant Table Reservation System</h1>
+
+{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
+
+<form action="/admin/typical_week_result/" method="post">
+
+	<table border='1'>
+
+		<tr>
+			<th>Day
+			<th>Opens
+			<th>Closes
+		</tr>
+		<tr>
+			<td>Sunday
+			<td><select name='sun_opens'>
+				{% for entry in sun_opens %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+			<td><select name='sun_closes'>
+				{% for entry in sun_closes %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+		</tr>
+		<tr>
+			<td>Monday
+			<td><select name='mon_opens'>
+				{% for entry in mon_opens %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+			<td><select name='mon_closes'>
+				{% for entry in mon_closes %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+		</tr>
+		<tr>
+			<td>Tuesday
+			<td><select name='tue_opens'>
+				{% for entry in tue_opens %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+			<td><select name='tue_closes'>
+				{% for entry in tue_closes %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+		</tr>
+		<tr>
+			<td>Wednesday
+			<td><select name='wed_opens'>
+				{% for entry in wed_opens %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+			<td><select name='wed_closes'>
+				{% for entry in wed_closes %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+		</tr>
+		<tr>
+			<td>Thursday
+			<td><select name='thu_opens'>
+				{% for entry in thu_opens %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+			<td><select name='thu_closes'>
+				{% for entry in thu_closes %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+		</tr>
+		<tr>
+			<td>Friday
+			<td><select name='fri_opens'>
+				{% for entry in fri_opens %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+			<td><select name='fri_closes'>
+				{% for entry in fri_closes %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+		</tr>
+		<tr>
+			<td>Saturday
+			<td><select name='sat_opens'>
+				{% for entry in sat_opens %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+			<td><select name='sat_closes'>
+				{% for entry in sat_closes %}
+					{% if entry.sel %}
+						<option selected value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% else %}
+						<option value='{{ entry.ndx }}'>{{ entry.str }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+		</tr>
+
+	</table>
+
+<p><input type="submit" value="Submit">
+</form>
+

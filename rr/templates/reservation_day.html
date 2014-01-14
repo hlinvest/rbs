@@ -1,0 +1,39 @@
+<p>Notes to the programmer:
+<ul>
+<li>The user selects a day either from the current month or the next month.
+</ul>
+
+<p>User interface:
+
+<p><a href='/'>Home</a>
+
+<h1>Restaurant Table Reservation System</h1>
+
+{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
+
+<form action="/reservation_day_result/" method="post">
+
+	<h2>{{ this_month_year }}</h2>
+	<table border='1'>
+		{% for week in this_month_cal %}
+			<tr>
+			{% for day in week %}
+				<td><button name='selection' style='width:40' value='{{ this_month_year }} {{ day }}'>{{ day }}</button>
+			{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+
+	<h2>{{ next_month_year }}</h2>
+	<table border='1'>
+		{% for week in next_month_cal %}
+			<tr>
+			{% for day in week %}
+				<td><button name='selection' style='width:40' value='{{ this_month_year }} {{ day }}'>{{ day }}</button>
+			{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+
+</form>
+

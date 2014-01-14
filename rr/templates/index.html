@@ -1,0 +1,19 @@
+<p>Notes to the programmer:
+<ul>
+<li>This system is a framework for programmers who might like a head start when building a restaurant table reservation system.
+<li>It is a bare bones html app meant to be functional, but not necessarily pretty.
+<li>Since each client will want his site to have its own unique look, the programmer will make it pretty (with style sheets and perhaps a custom-made javascript-driven table map) on a client-by-client basis.
+<li>The Admin selection goes to a password-protected restaurant owner administration page.
+<li>The Reservation selection goes to a (user) table reservation page.
+</ul>
+
+<p>User interface:
+
+<h1>Restaurant Table Reservation System</h1>
+
+{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
+
+<p><a href='/admin'>Admin</a>
+
+<p><a href='/reservation_day'>Reservation</a>
+

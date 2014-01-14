@@ -1,0 +1,19 @@
+<p>Notes to the programmer:
+<ul>
+<li>A typical day is one that has the most common opening and closing hours, probably Moday through Friday.
+<li>A typical week is one that has the most common weekly schedule, perhaps with different hours on weekends.
+<li>A table map provides the number and location of each table in the restaurant.
+</ul>
+
+<p>User interface:
+
+<p><a href='/'>Home</a>
+
+<h1>Restaurant Table Reservation System</h1>
+
+{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
+
+<p><a href='/admin/typical_day'>Set up a typical day.</a>
+<p><a href='/admin/typical_week'>Set up a typical week.</a>
+<p><a href='/admin/table_map'>Set up a table map.</a>
+

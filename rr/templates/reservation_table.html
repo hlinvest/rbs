@@ -1,0 +1,40 @@
+<p>Notes to the programmer:
+<ul>
+<li>The user selects the table (or tables) he would like to reserve.
+</ul>
+
+<p><a href='/'>Home</a>
+
+<h1>Restaurant Table Reservation System</h1>
+
+<h2>{{ month_str }} {{ day }}, {{ year }} - {{ hour_str }}</h2>
+
+{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
+
+<form action="/reservation_table_result/" method="post">
+
+	<table border='1'>
+	{% for row in tables %}
+		<tr>
+		{% for table in row %}
+			{% if table.number %}
+				{% if table.checked %}
+					<td width='50'><input type='checkbox' checked
+						name='{{ forloop.parentloop.counter }} {{ forloop.counter }}'
+						value='{{ year }} {{ month }} {{ day }} {{ hour }} {{ table.number }}'>{{ table.number }}</input>
+				{% else %}
+					<td width='50'><input type='checkbox'
+						name='{{ forloop.parentloop.counter }} {{ forloop.counter }}'
+						value='{{ year }} {{ month }} {{ day }} {{ hour }} {{ table.number }}'>{{ table.number }}</input>
+				{% endif %}
+			{% else %}
+				<td width='50'><input type='button' style='width:100%'></input>
+			{% endif %}
+		{% endfor %}
+		</tr>
+	{% endfor %}
+	</table>
+
+<p><input type="submit" value="Submit" />
+</form>
+

@@ -1,0 +1,37 @@
+<p>Notes to the programmer:
+<ul>
+<li>The programmer is assumed to have already assigned values for ROWS and COLUMNS in views.py.
+<li>The table map is a matrix with ROWS rows and COLUMNS columns, each cell a possible table location.
+<li>The restaurant owner enters the number of each table in its corresponding cell.
+<li>Cells that do not contain tables are simply left blank.
+</ul>
+
+<p>User interface:
+
+<p><a href='/'>Home</a>
+
+<h1>Restaurant Table Reservation System</h1>
+
+{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
+
+<form action="/admin/table_map_result/" method="post">
+
+	<table border='1'>
+
+	{% for row in tables %}
+		<tr>
+		{% for table in row %}
+			{% if table.number %}
+			<td><input type='textarea' style='width:50' name='{{ table.row }} {{ table.column }}' value='{{ table.number }}'></input>
+			{% else %}
+			<td><input type='textarea' style='width:50' name='{{ table.row }} {{ table.column }}'></input>
+			{% endif %}
+		{% endfor %}
+		</tr>
+	{% endfor %}
+
+	</table>
+
+<p><input type="submit" value="Submit" />
+</form>
+
